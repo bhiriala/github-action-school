@@ -5,7 +5,7 @@ export enum PaymentMethod {
 }
 
 export interface PaymentDetails {
-  amount: number;
+  amount: number|undefined;
   currency: string;
   method: PaymentMethod;
   cardNumber?: string;
