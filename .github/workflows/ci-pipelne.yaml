@@ -48,4 +48,6 @@ jobs:
 
       - name: Push Image
         if: ${{ inputs.Skip-push == 'false' }}
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/github-action-school
+        run: |
+          echo "Pushing Docker image to Docker Hub..."
+          docker push ${{ secrets.DOCKER_USERNAME }}/github-action-school
