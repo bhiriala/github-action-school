@@ -46,8 +46,8 @@ jobs:
       - name: Build the Docker Image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/github-action-school .
 
+      if: ${{ inputs.Skip-push == 'false' }}
       - name: Push Image
-        if: ${{ inputs.Skip-push == 'false' }}
         run: |
           echo "Pushing Docker image to Docker Hub..."
           docker push ${{ secrets.DOCKER_USERNAME }}/github-action-school
